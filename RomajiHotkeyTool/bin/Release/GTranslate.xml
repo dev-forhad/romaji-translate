@@ -1,0 +1,2794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GTranslate</name>
+    </assembly>
+    <members>
+        <member name="T:GTranslate.MicrosoftAuthTokenInfo">
+            <summary>
+            Represents a Microsoft Authorization token.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftAuthTokenInfo.Token">
+            <summary>
+            Gets the token.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftAuthTokenInfo.Region">
+            <summary>
+            Gets the region of this token.
+            </summary>
+        </member>
+        <member name="M:GTranslate.MicrosoftAuthTokenInfo.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.MicrosoftVoice">
+            <summary>
+            Represents a TTS voice in Microsoft Translator.
+            </summary>
+        </member>
+        <member name="M:GTranslate.MicrosoftVoice.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.MicrosoftVoice"/> class.
+            </summary>
+            <param name="displayName">The display name of the voice.</param>
+            <param name="shortName">The short name of the voice.</param>
+            <param name="gender">The gender of the voice.</param>
+            <param name="locale">The locale of the voice.</param>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoice.DisplayName">
+            <summary>
+            Gets the display name of this voice.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoice.ShortName">
+            <summary>
+            Gets the short name of this voice.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoice.Gender">
+            <summary>
+            Gets the gender of this voice.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoice.Locale">
+            <summary>
+            Gets the locale of this voice.
+            </summary>
+        </member>
+        <member name="M:GTranslate.MicrosoftVoice.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.ILanguage">
+            <summary>
+            Provides information about a language.
+            </summary>
+        </member>
+        <member name="P:GTranslate.ILanguage.Name">
+            <summary>
+            Gets the name of this language.
+            </summary>
+        </member>
+        <member name="P:GTranslate.ILanguage.ISO6391">
+            <summary>
+            Gets the ISO 639-1 code of this language.
+            </summary>
+        </member>
+        <member name="P:GTranslate.ILanguage.ISO6393">
+            <summary>
+            Gets the ISO 639-3 code of this language.
+            </summary>
+        </member>
+        <member name="T:GTranslate.ILanguageDictionary`2">
+            <summary>
+            Represents a dictionary of languages.
+            </summary>
+            <typeparam name="TCode">The type of codes (or keys) associated with a language.</typeparam>
+            <typeparam name="TLanguage">The type of values that implements <see cref="T:GTranslate.ILanguage"/>.</typeparam>
+        </member>
+        <member name="M:GTranslate.ILanguageDictionary`2.GetLanguage(`0)">
+            <summary>
+            Gets a language from a language code.
+            </summary>
+            <param name="code">The language code.</param>
+            <returns>The language.</returns>
+        </member>
+        <member name="M:GTranslate.ILanguageDictionary`2.TryGetLanguage(`0,`1@)">
+            <summary>
+            Tries to get a language from a language code, name or alias.
+            </summary>
+            <param name="code">The language code.</param>
+            <param name="language">The language, if found.</param>
+            <returns><see langword="true"/> if the language was found, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:GTranslate.CachedObject`1">
+            <summary>
+            Represents a generic cached object.
+            </summary>
+            <typeparam name="T">The type of the value to cache.</typeparam>
+        </member>
+        <member name="M:GTranslate.CachedObject`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.CachedObject`1"/> structure with a specified value and no expiration date.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:GTranslate.CachedObject`1.#ctor(`0,System.DateTimeOffset)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.CachedObject`1"/> structure with a specified value and expiration date.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="expirationDate">The date this object will expire.</param>
+        </member>
+        <member name="M:GTranslate.CachedObject`1.#ctor(`0,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.CachedObject`1"/> structure with a specified value and duration.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="duration">The duration this object will be valid.</param>
+        </member>
+        <member name="P:GTranslate.CachedObject`1.Value">
+            <summary>
+            Gets the cached object.
+            </summary>
+        </member>
+        <member name="P:GTranslate.CachedObject`1.ExpirationDate">
+            <summary>
+            Gets the date this object will expire.
+            </summary>
+        </member>
+        <member name="P:GTranslate.CachedObject`1.CachedDate">
+            <summary>
+            Gets the date this object was cached.
+            </summary>
+        </member>
+        <member name="M:GTranslate.CachedObject`1.IsExpired">
+            <summary>
+            Returns whether this object has expired.
+            </summary>
+            <returns><see langword="true"/> if the object has expired, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.CachedObject`1.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoiceContext.MicrosoftVoice">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoiceContext.MicrosoftVoiceArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoiceContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoiceContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.MicrosoftVoiceContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.MicrosoftVoiceContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.MicrosoftVoiceContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.MicrosoftVoiceContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.ReadOnlySequenceStream.CanRead">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.ReadOnlySequenceStream.CanSeek">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.ReadOnlySequenceStream.CanWrite">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.ReadOnlySequenceStream.Length">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.ReadOnlySequenceStream.Position">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.Flush">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.FlushAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.ReadByte">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.SetLength(System.Int64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.WriteByte(System.Byte)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.ReadOnlySequenceStream.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Language">
+            <summary>
+            Provides information about a language. Includes static methods to retrieve <see cref="T:GTranslate.Language"/> instances based on ISO codes or language names.
+            </summary>
+            <remarks>
+            Due to the way GTranslate handles the supported languages,
+            custom translators should use a custom language class instead.
+            </remarks>
+        </member>
+        <member name="M:GTranslate.Language.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Language"/> class, using a valid language name or code.
+            </summary>
+            <param name="nameOrCode">The language name or code. It can be a ISO 639-1 code, a ISO 639-3 code, a language name, or a language alias.</param>
+            <remarks>It is recommended to use <see cref="M:GTranslate.Language.GetLanguage(System.String)"/> or <see cref="M:GTranslate.Language.TryGetLanguage(System.String,GTranslate.Language@)"/> instead.</remarks>
+        </member>
+        <member name="M:GTranslate.Language.#ctor(System.String,System.String,System.String,System.String,GTranslate.TranslationServices)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Language"/> class, using the specified name, ISO codes and supported services.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="nativeName">The native name.</param>
+            <param name="iso6391">The ISO 639-1 code.</param>
+            <param name="iso6393">The ISO 639-3 code.</param>
+            <param name="supportedServices">The supported services.</param>
+        </member>
+        <member name="P:GTranslate.Language.LanguageDictionary">
+            <summary>
+            Gets the default language dictionary.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Language.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Language.NativeName">
+            <summary>
+            Gets the native name of this language.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Language.ISO6391">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Language.ISO6393">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Language.SupportedServices">
+            <summary>
+            Gets the supported translation services for this language.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Language.GetLanguage(System.String)">
+            <summary>
+            Gets a language from a language code, name or alias.
+            </summary>
+            <param name="code">The language name or code. It can be a ISO 639-1 code, a ISO 639-3 code, a language name, or a language alias.</param>
+            <returns>The language, or an exception if the language was not found.</returns>
+        </member>
+        <member name="M:GTranslate.Language.TryGetLanguage(System.String,GTranslate.Language@)">
+            <summary>
+            Tries to get a language from a language code, name or alias.
+            </summary>
+            <param name="code">The language name or code. It can be a ISO 639-1 code, a ISO 639-3 code, a language name, or a language alias.</param>
+            <param name="language">The language, if found.</param>
+            <returns><see langword="true"/> if the language was found, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Language.IsServiceSupported(GTranslate.TranslationServices)">
+            <summary>
+            Returns whether <paramref name="service"/> supports this language.
+            </summary>
+            <param name="service">The service.</param>
+            <returns><see langword="true"/> if <paramref name="service"/> supports this language, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Language.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Language.Equals(GTranslate.Language)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Language.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Language.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.LanguageDictionary">
+            <summary>
+            Represents the default language dictionary used in GTranslate. It contains all the supported languages across all the included translators.
+            </summary>
+        </member>
+        <member name="M:GTranslate.LanguageDictionary.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.LanguageDictionary.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.LanguageDictionary.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.LanguageDictionary.Item(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.LanguageDictionary.Keys">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.LanguageDictionary.Values">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.LanguageDictionary.ContainsKey(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.LanguageDictionary.TryGetValue(System.String,GTranslate.Language@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.LanguageDictionary.GetLanguage(System.String)">
+            <summary>
+            Gets a language from a language code, name or alias.
+            </summary>
+            <param name="code">The language name or code. It can be a ISO 639-1 code, a ISO 639-3 code, a language name, or a language alias.</param>
+            <returns>The language, or an exception if the language was not found.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="code"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the language was not found.</exception>
+        </member>
+        <member name="M:GTranslate.LanguageDictionary.TryGetLanguage(System.String,GTranslate.Language@)">
+            <summary>
+            Tries to get a language from a language code, name or alias.
+            </summary>
+            <param name="code">The language name or code. It can be a ISO 639-1 code, a ISO 639-3 code, a language name, or a language alias.</param>
+            <param name="language">The language, if found.</param>
+            <returns><see langword="true"/> if the language was found, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="P:GTranslate.LanguageDictionary.Aliases">
+            <summary>
+            Gets a read-only dictionary containing language aliases and their corresponding ISO 639-1 codes.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingErrorResultModelContext.BingErrorResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingErrorResultModelContext.HttpStatusCode">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingErrorResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingErrorResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingErrorResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.BingErrorResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.BingErrorResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.BingErrorResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.Single">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.NullableSingle">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.BingDetectedLanguageModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.BingTranslationModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.BingTranslationResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.BingTranslationResultModelArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.BingTransliterationModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.IReadOnlyListBingTranslationModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.BingTranslationResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.BingTranslationResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.BingTranslationResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.BingTranslationResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.Single">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.NullableSingle">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.GoogleSentenceModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.GoogleTranslationResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.IReadOnlyListGoogleSentenceModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.GoogleTranslationResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.GoogleTranslationResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.GoogleTranslationResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.GoogleTranslationResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftAuthTokenModelContext.MicrosoftAuthTokenModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftAuthTokenModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftAuthTokenModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftAuthTokenModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftAuthTokenModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftAuthTokenModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftAuthTokenModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.Single">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.MicrosoftLanguageDetectionResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.MicrosoftLanguageDetectionResultModelArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftLanguageDetectionResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslatorRequestContext.MicrosoftTranslatorRequest">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslatorRequestContext.MicrosoftTranslatorRequestArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslatorRequestContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslatorRequestContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslatorRequestContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTranslatorRequestContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTranslatorRequestContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTranslatorRequestContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.Single">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.MicrosoftDetectedLanguageModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.MicrosoftTranslationModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.MicrosoftTranslationResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.MicrosoftTranslationResultModelArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.IReadOnlyListMicrosoftTranslationModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTranslationResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTranslationResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTranslationResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTranslationResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTransliterationResultModelContext.MicrosoftTransliterationResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTransliterationResultModelContext.MicrosoftTransliterationResultModelArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTransliterationResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTransliterationResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.MicrosoftTransliterationResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTransliterationResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTransliterationResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.MicrosoftTransliterationResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.Int32">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.Object">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.ObjectArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.ObjectArrayArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.ObjectArrayArrayArray">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.ObjectArrayContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.ObjectArrayContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.ObjectArrayContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.ObjectArrayContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.YandexLanguageDetectionResultModelContext.Boolean">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexLanguageDetectionResultModelContext.YandexLanguageDetectionResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexLanguageDetectionResultModelContext.HttpStatusCode">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexLanguageDetectionResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexLanguageDetectionResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexLanguageDetectionResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.YandexLanguageDetectionResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.YandexLanguageDetectionResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.YandexLanguageDetectionResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.Boolean">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.YandexTranslationResultModel">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.IReadOnlyListString">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.HttpStatusCode">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.String">
+            <summary>
+            Defines the source generated JSON serialization contract metadata for a given type.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.Default">
+            <summary>
+            The default <see cref="T:System.Text.Json.Serialization.JsonSerializerContext"/> associated with a default <see cref="T:System.Text.Json.JsonSerializerOptions"/> instance.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Models.YandexTranslationResultModelContext.GeneratedSerializerOptions">
+            <summary>
+            The source-generated options associated with this context.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Models.YandexTranslationResultModelContext.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.YandexTranslationResultModelContext.#ctor(System.Text.Json.JsonSerializerOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Models.YandexTranslationResultModelContext.GetTypeInfo(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.AggregateTranslationResult">
+            <summary>
+            Represents the result of translating text using <see cref="T:GTranslate.Translators.AggregateTranslator"/>.
+            It wraps a <see cref="T:GTranslate.Results.ITranslationResult"/> and includes exceptions that have occurred in other translators before receiving the result.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.InnerResult">
+            <summary>
+            Gets the translation result.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.Exceptions">
+            <summary>
+            Gets a read-only dictionary of exceptions that have occurred in other translators before receiving the result. The key is the name of the translator that has thrown the exception (the value).
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.Translation">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.Source">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.Service">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTranslationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Results.AggregateTranslationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.AggregateTransliterationResult">
+            <summary>
+            Represents the result of transliterating text using <see cref="T:GTranslate.Translators.AggregateTranslator"/>.
+            It wraps a <see cref="T:GTranslate.Results.ITranslationResult"/> and includes exceptions that have occurred in other translators before receiving the result.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.InnerResult">
+            <summary>
+            Gets the transliteration result.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.Exceptions">
+            <summary>
+            Gets a read-only dictionary of exceptions that have occurred in other translators before receiving the result. The key is the name of the translator that has thrown the exception (the value).
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.Transliteration">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.Source">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.Service">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.AggregateTransliterationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Results.AggregateTransliterationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.BingTranslationResult">
+            <summary>
+            Represents a translation result from Bing Translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.Translation">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Translation"/>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.SourceLanguage">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.SourceLanguage"/>
+            <remarks>This property returns <see langword="null"/> when the translator can't determine the source language.</remarks>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.Transliteration">
+            <summary>
+            Gets the transliteration of the result (<see cref="P:GTranslate.Results.BingTranslationResult.Translation"/>).
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.SourceTransliteration">
+            <summary>
+            Gets the transliteration of the source text.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.Script">
+            <summary>
+            Gets the script of <see cref="P:GTranslate.Results.BingTranslationResult.Transliteration"/>.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.Score">
+            <summary>
+            Gets the language detection score.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#Language}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.BingTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.BingTranslationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.BingTransliterationResult">
+            <summary>
+            Represents a transliteration result from Bing Translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.Transliteration">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Transliteration"/>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.SourceTransliteration">
+            <summary>
+            Gets the transliteration of the source text (<see cref="P:GTranslate.Results.BingTransliterationResult.Source"/>).
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.SourceLanguage">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.SourceLanguage"/>
+            <remarks>This property returns <see langword="null"/> when the translator can't determine the source language.</remarks>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.Script">
+            <summary>
+            Gets the language script.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#Language}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.BingTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.BingTransliterationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.GoogleTranslationResult">
+            <summary>
+            Represents a translation result from Google Translate.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.Translation">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Translation"/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.Transliteration">
+            <summary>
+            Gets the transliteration of the text.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.SourceTransliteration">
+            <summary>
+            Gets the transliteration of the source text.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.Confidence">
+            <summary>
+            Gets the translation confidence.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.GoogleTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.GoogleTranslationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.GoogleTransliterationResult">
+            <summary>
+            Represents a transliteration result from Google Translate.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.Transliteration">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Transliteration"/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.SourceTransliteration">
+            <summary>
+            Gets the transliteration of the source text.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.GoogleTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.GoogleTransliterationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.ITranslationResult`1">
+            <summary>
+            Represents a translation result.
+            </summary>
+            <typeparam name="TLanguage">The language type.</typeparam>
+        </member>
+        <member name="P:GTranslate.Results.ITranslationResult`1.Translation">
+            <summary>
+            Gets the translation.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITranslationResult`1.Source">
+            <summary>
+            Gets the source text.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITranslationResult`1.Service">
+            <summary>
+            Gets the service this result is from.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITranslationResult`1.SourceLanguage">
+            <summary>
+            Gets the source language.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITranslationResult`1.TargetLanguage">
+            <summary>
+            Gets the target language.
+            </summary>
+        </member>
+        <member name="T:GTranslate.Results.ITranslationResult">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.ITransliterationResult`1">
+            <summary>
+            Represents a transliteration result.
+            </summary>
+            <typeparam name="TLanguage">The language type.</typeparam>
+        </member>
+        <member name="P:GTranslate.Results.ITransliterationResult`1.Transliteration">
+            <summary>
+            Gets the transliteration.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITransliterationResult`1.Source">
+            <summary>
+            Gets the source text.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITransliterationResult`1.Service">
+            <summary>
+            Gets the service this result is from.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITransliterationResult`1.SourceLanguage">
+            <summary>
+            Gets the source language.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.ITransliterationResult`1.TargetLanguage">
+            <summary>
+            Gets the target language.
+            </summary>
+        </member>
+        <member name="T:GTranslate.Results.ITransliterationResult">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.MicrosoftTranslationResult">
+            <summary>
+            Represents a translation result from Microsoft Translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.Translation">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Translation"/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.Score">
+            <summary>
+            Gets the language detection score.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.MicrosoftTranslationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.MicrosoftTransliterationResult">
+            <summary>
+            Represents a transliteration result from Microsoft Translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.Transliteration">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Transliteration"/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.Script">
+            <summary>
+            Gets the target script.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.SourceScript">
+            <summary>
+            Gets the source script.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.MicrosoftTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.MicrosoftTransliterationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.YandexTranslationResult">
+            <summary>
+            Represents a translation result from Yandex.Translate.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.Translation">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Translation"/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITranslationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.YandexTranslationResult.GTranslate#Results#ITranslationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.YandexTranslationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.Results.YandexTransliterationResult">
+            <summary>
+            Represents a transliteration result from Yandex.Translate.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.Transliteration">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Transliteration"/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.Source">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Source"/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.Service">
+            <inheritdoc cref="P:GTranslate.Results.ITransliterationResult`1.Service"/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.TargetLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.SourceLanguage">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#SourceLanguage">
+            <inheritdoc />
+        </member>
+        <member name="P:GTranslate.Results.YandexTransliterationResult.GTranslate#Results#ITransliterationResult{GTranslate#ILanguage}#TargetLanguage">
+            <inheritdoc />
+        </member>
+        <member name="M:GTranslate.Results.YandexTransliterationResult.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GTranslate.TranslationServices">
+            <summary>
+            Specifies the translation services.
+            </summary>
+        </member>
+        <member name="F:GTranslate.TranslationServices.Google">
+            <summary>
+            Google Translate.
+            </summary>
+        </member>
+        <member name="F:GTranslate.TranslationServices.Bing">
+            <summary>
+            Bing Translator.
+            </summary>
+        </member>
+        <member name="F:GTranslate.TranslationServices.Yandex">
+            <summary>
+            Yandex.Translate.
+            </summary>
+        </member>
+        <member name="F:GTranslate.TranslationServices.Microsoft">
+            <summary>
+            Microsoft Azure Translator.
+            </summary>
+        </member>
+        <member name="T:GTranslate.TranslatorException">
+            <summary>
+            The exception that is thrown by a translation service.
+            </summary>
+        </member>
+        <member name="P:GTranslate.TranslatorException.Service">
+            <summary>
+            Gets the translation service that caused this exception.
+            </summary>
+        </member>
+        <member name="M:GTranslate.TranslatorException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.TranslatorException"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.TranslatorException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.TranslatorException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:GTranslate.TranslatorException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.TranslatorException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="service">The translation service that caused this exception.</param>
+        </member>
+        <member name="M:GTranslate.TranslatorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.TranslatorException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:GTranslate.TranslatorException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.TranslatorException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="service">The translation service that caused this exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="T:GTranslate.Translators.AggregateTranslator">
+            <summary>
+            Represents an aggregate translator. This class groups multiple translation services into a single class for ease of use.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.AggregateTranslator.Name">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.AggregateTranslator"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.#ctor(System.Collections.Generic.IReadOnlyCollection{GTranslate.Translators.ITranslator})">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.AggregateTranslator"/> class with the specified translators.
+            </summary>
+            <param name="translators">The translators to use.</param>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.#ctor(GTranslate.Translators.GoogleTranslator,GTranslate.Translators.GoogleTranslator2,GTranslate.Translators.MicrosoftTranslator,GTranslate.Translators.YandexTranslator,GTranslate.Translators.BingTranslator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.AggregateTranslator"/> class with the specified translators.
+            </summary>
+            <param name="googleTranslator">The Google Translator.</param>
+            <param name="googleTranslator2">The new Google Translator.</param>
+            <param name="microsoftTranslator">The Microsoft translator.</param>
+            <param name="yandexTranslator">The Yandex Translator.</param>
+            <param name="bingTranslator">The Bing Translator.</param>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text using the available translation services.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task containing the translation result.</returns>
+            <remarks>This method will attempt to use all the translation services passed in the constructor, in the order they were provided.</remarks>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when no translator supports <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:System.AggregateException">Thrown when all translators fail to provide a valid result.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.AggregateTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.TransliterateAsync(System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text using the available translation services.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task containing the transliteration result.</returns>
+            <remarks>This method will attempt to use all the translation services passed in the constructor, in the order they were provided.</remarks>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when no translator supports <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:System.AggregateException">Thrown when all translators fail to provide a valid result.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.AggregateTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text using the available translation services.
+            </summary>
+            <param name="text">The text to detect its language.</param>
+            <returns>A task that represents the asynchronous language detection operation. The task contains the detected language.</returns>
+            <remarks>This method will attempt to use all the translation services passed in the constructor, in the order they were provided.</remarks>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> is null.</exception>
+            <exception cref="T:System.AggregateException">Thrown when all translators fail to provide a valid result.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether at least one translator supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported by at least one translator, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.IsLanguageSupported(GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.AggregateTranslator.IsLanguageSupported(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.ToString">
+            <summary>
+            Returns the name of this translator.
+            </summary>
+            <returns>The name of this translator.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.AggregateTranslator.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.AggregateTranslator.Dispose"/>
+        </member>
+        <member name="T:GTranslate.Translators.BingTranslator">
+            <summary>
+            Represents the Bing Translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.BingTranslator.Name">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.BingTranslator"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.BingTranslator"/> class with the provided <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance.</param>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text using Bing Translator.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous translation operation. The task contains the translation result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.TransliterateAsync(System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text using Bing Translator.
+            </summary>
+            <param name="text">The text to transliterate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous transliteration operation. The task contains the transliteration result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text using Bing Translator.
+            </summary>
+            <param name="text">The text to detect its language.</param>
+            <returns>A task that represents the asynchronous language detection operation. The task contains the detected language.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> is null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.TextToSpeechAsync(System.String,System.String,System.Single)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <param name="text">The text to convert.</param>
+            <param name="language">The language of the voice. Only the languages in <see cref="P:GTranslate.Translators.MicrosoftTranslator.DefaultVoices"/> are supported.</param>
+            <param name="speakRate">The speaking rate of the text, expressed as a number that acts as a multiplier of the default.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="language"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.MicrosoftVoice"/> could not be obtained from <paramref name="language"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when <paramref name="language"/> is not supported, or an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.TextToSpeechAsync(System.String,GTranslate.MicrosoftVoice,System.Single)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <remarks>No validation will be performed to the <paramref name="voice"/> parameter. Make sure to get the correct voices from either <see cref="P:GTranslate.Translators.MicrosoftTranslator.DefaultVoices"/> or <see cref="M:GTranslate.Translators.MicrosoftTranslator.GetTTSVoicesAsync"/>.</remarks>
+            <param name="text">The text to convert.</param>
+            <param name="voice">The voice.</param>
+            <param name="speakRate">The speaking rate of the text, expressed as a number that acts as a multiplier of the default.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="voice"/> are null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether Bing Translator supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.IsLanguageSupported(GTranslate.Language)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.IsLanguageSupported(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.GTranslate#Translators#ITranslator#DetectLanguageAsync(System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.DetectLanguageAsync(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.GTranslate#Translators#ITranslator#IsLanguageSupported(GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.IsLanguageSupported(GTranslate.Language)"/>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.BingHotPatch(System.String)">
+            <summary>
+            Hot-patches language codes to Bing-specific ones.
+            </summary>
+            <param name="languageCode">The language code.</param>
+            <returns>The hot-patched language code.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.ToString">
+            <summary>
+            Returns the name of this translator.
+            </summary>
+            <returns>The name of this translator.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.BingTranslator.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.BingTranslator.Dispose"/>
+        </member>
+        <member name="T:GTranslate.Translators.GoogleTranslator">
+            <summary>
+            Represents a translator that uses the old (previous) Google Translate API.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.GoogleTranslator.TextToSpeechLanguages">
+            <summary>
+            Gets a read-only collection of languages that support text-to-speech.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.GoogleTranslator.Name">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.GoogleTranslator"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.GoogleTranslator"/> class with the provided <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance.</param>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text using Google Translate.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous translation operation. The task contains the translation result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.TransliterateAsync(System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text using Google Translate.
+            </summary>
+            <param name="text">The text to transliterate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous transliteration operation. The task contains the transliteration result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text using Google Translate.
+            </summary>
+            <param name="text">The text to detect its language.</param>
+            <returns>A task that represents the asynchronous language detection operation. The task contains the detected language.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> is null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.TextToSpeechAsync(System.String,System.String,System.Single)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <param name="text">The text to convert.</param>
+            <param name="language">The voice language. Only the languages in <see cref="P:GTranslate.Translators.GoogleTranslator.TextToSpeechLanguages"/> are supported.</param>
+            /// <param name="speed">The rate (speed) of synthesized speech. Google uses <c>1</c> for normal speed and <c>0.3</c> for slow speed.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="language"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="language"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when <paramref name="language"/> is not supported, or an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.TextToSpeechAsync(System.String,GTranslate.ILanguage,System.Single)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TextToSpeechAsync(System.String,System.String,System.Single)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether Google Translate supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.IsLanguageSupported(GTranslate.Language)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.IsLanguageSupported(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GTranslate#Translators#ITranslator#DetectLanguageAsync(System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.DetectLanguageAsync(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GTranslate#Translators#ITranslator#IsLanguageSupported(GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.IsLanguageSupported(GTranslate.Language)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.GoogleHotPatch(System.String)">
+            <summary>
+            Hot-patches language codes to Google-specific ones.
+            </summary>
+            <param name="languageCode">The language code.</param>
+            <returns>The hot-patched language code.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.ToString">
+            <summary>
+            Returns the name of this translator.
+            </summary>
+            <returns>The name of this translator.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator.Dispose"/>
+        </member>
+        <member name="T:GTranslate.Translators.GoogleTranslator2">
+            <summary>
+            Represents a translator for the new Google Translate RPC API.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.GoogleTranslator2.TextToSpeechLanguages">
+            <summary>
+            Gets a read-only collection of languages that support text-to-speech.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.GoogleTranslator2.Name">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.GoogleTranslator2"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.GoogleTranslator2"/> class with the provided <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance.</param>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text using Google Translate.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous translation operation. The task contains the translation result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.TransliterateAsync(System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text using Google Translate.
+            </summary>
+            <param name="text">The text to transliterate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous transliteration operation. The task contains the transliteration result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text using Google Translate.
+            </summary>
+            <param name="text">The text to detect its language.</param>
+            <returns>A task that represents the asynchronous language detection operation. The task contains the detected language.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> is null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.TextToSpeechAsync(System.String,System.String,System.Boolean)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <param name="text">The text to convert.</param>
+            <param name="language">The voice language. Only the languages in <see cref="P:GTranslate.Translators.GoogleTranslator2.TextToSpeechLanguages"/> are supported.</param>
+            <param name="slow">Whether to read the text slowly.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="language"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="language"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when <paramref name="language"/> is not supported.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.TextToSpeechAsync(System.String,GTranslate.ILanguage,System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TextToSpeechAsync(System.String,System.String,System.Boolean)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether Google Translate supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.IsLanguageSupported(GTranslate.Language)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.IsLanguageSupported(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GTranslate#Translators#ITranslator#TranslateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GTranslate#Translators#ITranslator#TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GTranslate#Translators#ITranslator#DetectLanguageAsync(System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.DetectLanguageAsync(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GTranslate#Translators#ITranslator#IsLanguageSupported(GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.IsLanguageSupported(GTranslate.Language)"/>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.GoogleHotPatch(System.String)">
+            <summary>
+            Hot-patches language codes to Google-specific ones.
+            </summary>
+            <param name="languageCode">The language code.</param>
+            <returns>The hot-patched language code.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.ToString">
+            <summary>
+            Returns the name of this translator.
+            </summary>
+            <returns>The name of this translator.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.GoogleTranslator2.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.GoogleTranslator2.Dispose"/>
+        </member>
+        <member name="T:GTranslate.Translators.ITranslator">
+            <summary>
+            Represents a translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.ITranslator.Name">
+            <summary>
+            Gets the name of this translator.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text to the specified language.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task containing the translation result.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.ITranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.TransliterateAsync(System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text to the specified language.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task containing the transliteration result.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.ITranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text.
+            </summary>
+            <param name="text">The text.</param>
+            <returns>A task containing the detected language.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether this translator supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.ITranslator.IsLanguageSupported(GTranslate.ILanguage)">
+            <summary>
+            Returns whether this translator supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="T:GTranslate.Translators.MicrosoftTranslator">
+            <summary>
+            Represents the Microsoft Azure translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.MicrosoftTranslator.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:GTranslate.Translators.MicrosoftTranslator.DefaultVoices">
+            <summary>
+            Gets a read-only dictionary containing the hardcoded TTS voices used internally in Bing Translator.
+            </summary>
+            <remarks>
+            This dictionary is incomplete; it only includes 1 voice per language despite the API offering multiple voices.<br/>
+            To get the complete list, use <see cref="M:GTranslate.Translators.MicrosoftTranslator.GetTTSVoicesAsync"/>.
+            </remarks>
+        </member>
+        <member name="P:GTranslate.Translators.MicrosoftTranslator.Scripts">
+            <summary>
+            Gets a read-only dictionary containing the languages that support transliteration and their supported scripts.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.MicrosoftTranslator"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.MicrosoftTranslator"/> class with the provided <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance.</param>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text using Microsoft Translator.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous translation operation. The task contains the translation result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.TransliterateAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text using Microsoft Translator.
+            </summary>
+            <param name="text">The text to transliterate.</param>
+            <param name="language">The language of the text.</param>
+            <param name="fromScript">The source script.</param>
+            <param name="toScript">The target script.</param>
+            <returns>A task that represents the asynchronous transliteration operation. The task contains the transliteration result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a parameter is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="language"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when a parameter is not supported, or an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.TransliterateAsync(System.String,System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text using Microsoft Translator.
+            </summary>
+            <param name="text">The text to detect its language.</param>
+            <returns>A task that represents the asynchronous language detection operation. The task contains the detected language.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> is null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.TextToSpeechAsync(System.String,System.String,System.Single)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <param name="text">The text to convert.</param>
+            <param name="language">The language of the voice. Only the languages in <see cref="P:GTranslate.Translators.MicrosoftTranslator.DefaultVoices"/> are supported.</param>
+            <param name="speakRate">The speaking rate of the text, expressed as a number that acts as a multiplier of the default.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="language"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.MicrosoftVoice"/> could not be obtained from <paramref name="language"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when <paramref name="language"/> is not supported, or an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.TextToSpeechAsync(System.String,GTranslate.MicrosoftVoice,System.Single)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <remarks>No validation will be performed to the <paramref name="voice"/> parameter. Make sure to get the correct voices from either <see cref="P:GTranslate.Translators.MicrosoftTranslator.DefaultVoices"/> or <see cref="M:GTranslate.Translators.MicrosoftTranslator.GetTTSVoicesAsync"/>.</remarks>
+            <param name="text">The text to convert.</param>
+            <param name="voice">The voice.</param>
+            <param name="speakRate">The speaking rate of the text, expressed as a number that acts as a multiplier of the default.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="voice"/> are null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.GetTTSVoicesAsync">
+            <summary>
+            Gets a list of supported TTS voices and caches it.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1"/> containing the list of voices.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.GetOrUpdateMicrosoftAuthTokenAsync">
+            <summary>
+            Gets or updates the Microsoft Azure Authentication Token.
+            </summary>
+            <remarks>
+            This token can be used in the following services:<br/>
+            - <see href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/">Speech Services</see>
+            </remarks>
+            <returns>A task that represents the asynchronous operation. The task contains the token.</returns>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when the token could not be obtained from the response.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether Microsoft Translator supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.IsLanguageSupported(GTranslate.Language)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.IsLanguageSupported(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.GTranslate#Translators#ITranslator#DetectLanguageAsync(System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.DetectLanguageAsync(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.GTranslate#Translators#ITranslator#IsLanguageSupported(GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.IsLanguageSupported(GTranslate.Language)"/>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.MicrosoftHotPatch(System.String)">
+            <summary>
+            Hot-patches language codes to Microsoft-specific ones.
+            </summary>
+            <param name="languageCode">The language code.</param>
+            <returns>The hot-patched language code.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.ToString">
+            <summary>
+            Returns the name of this translator.
+            </summary>
+            <returns>The name of this translator.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.MicrosoftTranslator.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.MicrosoftTranslator.Dispose"/>
+        </member>
+        <member name="T:GTranslate.Translators.YandexTranslator">
+            <summary>
+            Represents the Yandex Translator.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.YandexTranslator.TextToSpeechLanguages">
+            <summary>
+            Gets a read-only collection of languages that support text-to-speech.
+            </summary>
+        </member>
+        <member name="P:GTranslate.Translators.YandexTranslator.Name">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.YandexTranslator"/> class.
+            </summary>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GTranslate.Translators.YandexTranslator"/> class with the provided <see cref="T:System.Net.Http.HttpClient"/> instance.
+            </summary>
+            <param name="httpClient">An <see cref="T:System.Net.Http.HttpClient"/> instance.</param>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.TranslateAsync(System.String,System.String,System.String)">
+            <summary>
+            Translates a text using Yandex.Translate.
+            </summary>
+            <param name="text">The text to translate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous translation operation. The task contains the translation result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.TransliterateAsync(System.String,System.String,System.String)">
+            <summary>
+            Transliterates a text using Yandex.Translate.
+            </summary>
+            <param name="text">The text to transliterate.</param>
+            <param name="toLanguage">The target language.</param>
+            <param name="fromLanguage">The source language.</param>
+            <returns>A task that represents the asynchronous transliteration operation. The task contains the transliteration result.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="toLanguage"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="toLanguage"/> or <paramref name="fromLanguage"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">
+            Thrown when <paramref name="toLanguage"/> or <paramref name="fromLanguage"/> are not supported, or an error occurred during the operation.
+            </exception>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.DetectLanguageAsync(System.String)">
+            <summary>
+            Detects the language of a text using Yandex.Translate.
+            </summary>
+            <param name="text">The text to detect its language.</param>
+            <returns>A task that represents the asynchronous language detection operation. The task contains the detected language.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> is null.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when an error occurred during the operation.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.TextToSpeechAsync(System.String,System.String,System.Single)">
+            <summary>
+            Converts text into synthesized speech.
+            </summary>
+            <param name="text">The text to convert.</param>
+            <param name="language">The voice language. Only the languages in <see cref="P:GTranslate.Translators.YandexTranslator.TextToSpeechLanguages"/> are supported.</param>
+            <param name="speed">The rate (speed) of synthesized speech.</param>
+            <returns>A task that represents the asynchronous synthesis operation. The task contains the synthesized speech in a MP3 <see cref="T:System.IO.Stream"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown when this translator has been disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="text"/> or <paramref name="language"/> are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a <see cref="T:GTranslate.Language"/> could not be obtained from <paramref name="language"/>.</exception>
+            <exception cref="T:GTranslate.TranslatorException">Thrown when <paramref name="language"/> is not supported.</exception>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.TextToSpeechAsync(System.String,GTranslate.ILanguage,System.Single)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TextToSpeechAsync(System.String,System.String,System.Single)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.IsLanguageSupported(System.String)">
+            <summary>
+            Returns whether Yandex.Translate supports the specified language.
+            </summary>
+            <param name="language">The language.</param>
+            <returns><see langword="true"/> if the language is supported, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.IsLanguageSupported(GTranslate.Language)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.IsLanguageSupported(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TranslateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.GTranslate#Translators#ITranslator#TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TranslateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,System.String,System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TransliterateAsync(System.String,System.String,System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.GTranslate#Translators#ITranslator#TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.TransliterateAsync(System.String,GTranslate.ILanguage,GTranslate.ILanguage)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.GTranslate#Translators#ITranslator#DetectLanguageAsync(System.String)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.DetectLanguageAsync(System.String)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.GTranslate#Translators#ITranslator#IsLanguageSupported(GTranslate.ILanguage)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.IsLanguageSupported(GTranslate.Language)"/>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.YandexHotPatch(System.String)">
+            <summary>
+            Hot-patches language codes to Yandex-specific ones.
+            </summary>
+            <param name="languageCode">The language code.</param>
+            <returns>The hot-patched language code.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.ToString">
+            <summary>
+            Returns the name of this translator.
+            </summary>
+            <returns>The name of this translator.</returns>
+        </member>
+        <member name="M:GTranslate.Translators.YandexTranslator.Dispose(System.Boolean)">
+            <inheritdoc cref="M:GTranslate.Translators.YandexTranslator.Dispose"/>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>
+            Specifies that null is allowed as an input even if the corresponding type disallows it.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.ConstantExpectedAttribute">
+            <summary>
+            Indicates that the specified method parameter expects a constant.
+            </summary>
+            <remarks>
+            This can be used to inform tooling that a constant should be used as an argument for the annotated parameter.
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.ConstantExpectedAttribute.Min">
+            <summary>
+            Indicates the minimum bound of the expected constant, inclusive.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.ConstantExpectedAttribute.Max">
+            <summary>
+            Indicates the maximum bound of the expected constant, inclusive.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>
+            Specifies that null is disallowed as an input even if the corresponding type allows it.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>
+            Applied to a method that will never return under any circumstance.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>
+            Specifies that the method will not return if the associated Boolean parameter is passed the specified value.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes the attribute with the specified parameter value.
+            </summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable
+            by diagnostics if the argument to the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>
+            Gets the condition parameter value.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.ExperimentalAttribute">
+            <summary>
+            Indicates that an API is experimental and it may change in the future.
+            </summary>
+            <remarks>
+            This attribute allows call sites to be flagged with a diagnostic that indicates that an experimental
+            feature is used. Authors can use this attribute to ship preview features in their assemblies.
+            </remarks>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.ExperimentalAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.ExperimentalAttribute"/> class,
+            specifying the ID that the compiler will use when reporting a use of the API the attribute applies to.
+            </summary>
+            <param name="diagnosticId">The ID that the compiler will use when reporting a use of the API the attribute applies to.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.ExperimentalAttribute.DiagnosticId">
+            <summary>
+            Gets the ID that the compiler will use when reporting a use of the API the attribute applies to.
+            </summary>
+            <value>The unique diagnostic ID.</value>
+            <remarks>
+            The diagnostic ID is shown in build output for warnings and errors.
+            <para>This property represents the unique ID that can be used to suppress the warnings or errors, if needed.</para>
+            </remarks>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.ExperimentalAttribute.UrlFormat">
+            <summary>
+            Gets or sets the URL for corresponding documentation.
+            The API accepts a format string instead of an actual URL, creating a generic URL that includes the diagnostic ID.
+            </summary>
+            <value>The format string that represents a URL to corresponding documentation.</value>
+            <remarks>An example format string is <c>https://contoso.com/obsoletion-warnings/{0}</c>.</remarks>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>
+            Specifies that an output may be null even if the corresponding type disallows it.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>
+            Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes the attribute with the specified return value condition.
+            </summary>
+            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter may be null.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>
+            Gets the return value condition.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute">
+            <summary>
+            Specifies that the method or property will ensure that the listed field and property members have not-null values.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String)">
+            <summary>
+            Initializes the attribute with a field or property member.
+            </summary>
+            <param name="member">The field or property member that is promised to be not-null.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.#ctor(System.String[])">
+            <summary>
+            Initializes the attribute with the list of field and property members.
+            </summary>
+            <param name="members">The list of field and property members that are promised to be not-null.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullAttribute.Members">
+            <summary>
+            Gets field or property member names.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute">
+            <summary>
+            Specifies that the method or property will ensure that the listed field and property
+            members have not-null values when returning with the specified return value condition.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String)">
+            <summary>
+            Initializes the attribute with the specified return value condition and a field or property member.
+            </summary>
+            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter will not be null.</param>
+            <param name="member">The field or property member that is promised to be not-null.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.#ctor(System.Boolean,System.String[])">
+            <summary>
+            Initializes the attribute with the specified return value condition and list of field and property members.
+            </summary>
+            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter will not be null.</param>
+            <param name="members">The list of field and property members that are promised to be not-null.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.ReturnValue">
+            <summary>
+            Gets the return value condition.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MemberNotNullWhenAttribute.Members">
+            <summary>
+            Gets field or property member names.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>
+            Specifies that an output will not be null even if the corresponding type allows it.
+            Specifies that an input argument was not null when the call returns.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>
+            Specifies that the output will be non-null if the named parameter is non-null.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>
+            Initializes the attribute with the associated parameter name.
+            </summary>
+            <param name="parameterName">The associated parameter name. The output will be non-null if the argument to the parameter specified is non-null.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>
+            Gets the associated parameter name.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>
+            Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes the attribute with the specified return value condition.
+            </summary>
+            <param name="returnValue">The return value condition. If the method returns this value, the associated parameter will not be null.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute">
+            <summary>
+            Specifies that this constructor sets all required members for the current type,
+            and callers do not need to set any required members themselves.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute">
+            <summary>
+            Specifies the syntax used in a string.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.#ctor(System.String)">
+            <summary>
+            Initializes the <see cref="T:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute"/> with the identifier of the syntax used.
+            </summary>
+            <param name="syntax">The syntax identifier.</param>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.#ctor(System.String,System.Object[])">
+            <summary>Initializes the <see cref="T:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute"/> with the identifier of the syntax used.</summary>
+            <param name="syntax">The syntax identifier.</param>
+            <param name="arguments">Optional arguments associated with the specific syntax employed.</param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Syntax">
+            <summary>Gets the identifier of the syntax used.</summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Arguments">
+            <summary>Optional arguments associated with the specific syntax employed.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.CompositeFormat">
+            <summary>The syntax identifier for strings containing composite formats for string formatting.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.DateOnlyFormat">
+            <summary>The syntax identifier for strings containing date format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.DateTimeFormat">
+            <summary>The syntax identifier for strings containing date and time format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.EnumFormat">
+            <summary>The syntax identifier for strings containing <see cref="T:System.Enum"/> format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.GuidFormat">
+            <summary>The syntax identifier for strings containing <see cref="T:System.Guid"/> format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Json">
+            <summary>The syntax identifier for strings containing JavaScript Object Notation (JSON).</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.NumericFormat">
+            <summary>The syntax identifier for strings containing numeric format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Regex">
+            <summary>The syntax identifier for strings containing regular expressions.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.TimeOnlyFormat">
+            <summary>The syntax identifier for strings containing time format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.TimeSpanFormat">
+            <summary>The syntax identifier for strings containing <see cref="T:System.TimeSpan"/> format specifiers.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Uri">
+            <summary>The syntax identifier for strings containing URIs.</summary>
+        </member>
+        <member name="F:System.Diagnostics.CodeAnalysis.StringSyntaxAttribute.Xml">
+            <summary>The syntax identifier for strings containing XML.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.UnscopedRefAttribute">
+            <summary>
+            Used to indicate a byref escapes and is not scoped.
+            </summary>
+            <remarks>
+            <para>
+            There are several cases where the C# compiler treats a <see langword="ref"/> as implicitly
+            <see langword="scoped"/> - where the compiler does not allow the <see langword="ref"/> to escape the method.
+            </para>
+            <para>
+            For example:
+            <list type="number">
+                <item><see langword="this"/> for <see langword="struct"/> instance methods.</item>
+                <item><see langword="ref"/> parameters that refer to <see langword="ref"/> <see langword="struct"/> types.</item>
+                <item><see langword="out"/> parameters.</item>
+            </list>
+            </para>
+            <para>
+            This attribute is used in those instances where the <see langword="ref"/> should be allowed to escape.
+            </para>
+            <para>
+            Applying this attribute, in any form, has impact on consumers of the applicable API. It is necessary for
+            API authors to understand the lifetime implications of applying this attribute and how it may impact their users.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:System.Index">
+            <summary>Represent a type can be used to index a collection either from the start or the end.</summary>
+            <remarks>
+            Index is used by the C# compiler to support the new index syntax
+            <code>
+            int[] someArray = new int[5] { 1, 2, 3, 4, 5 } ;
+            int lastElement = someArray[^1]; // lastElement = 5
+            </code>
+            </remarks>
+        </member>
+        <member name="M:System.Index.#ctor(System.Int32,System.Boolean)">
+            <summary>Construct an Index using a value and indicating if the index is from the start or from the end.</summary>
+            <param name="value">The index value. it has to be zero or positive number.</param>
+            <param name="fromEnd">Indicating if the index is from the start or from the end.</param>
+            <remarks>
+            If the Index constructed from the end, index value 1 means pointing at the last element and index value 0 means pointing at beyond last element.
+            </remarks>
+        </member>
+        <member name="P:System.Index.Start">
+            <summary>Create an Index pointing at first element.</summary>
+        </member>
+        <member name="P:System.Index.End">
+            <summary>Create an Index pointing at beyond last element.</summary>
+        </member>
+        <member name="M:System.Index.FromStart(System.Int32)">
+            <summary>Create an Index from the start at the position indicated by the value.</summary>
+            <param name="value">The index value from the start.</param>
+        </member>
+        <member name="M:System.Index.FromEnd(System.Int32)">
+            <summary>Create an Index from the end at the position indicated by the value.</summary>
+            <param name="value">The index value from the end.</param>
+        </member>
+        <member name="P:System.Index.Value">
+            <summary>Returns the index value.</summary>
+        </member>
+        <member name="P:System.Index.IsFromEnd">
+            <summary>Indicates whether the index is from the start or the end.</summary>
+        </member>
+        <member name="M:System.Index.GetOffset(System.Int32)">
+            <summary>Calculate the offset from the start using the giving collection length.</summary>
+            <param name="length">The length of the collection that the Index will be used with. length has to be a positive value</param>
+            <remarks>
+            For performance reason, we don't validate the input length parameter and the returned offset value against negative values.
+            we don't validate either the returned offset is greater than the input length.
+            It is expected Index will be used with collections which always have non negative length/count. If the returned offset is negative and
+            then used to index a collection will get out of range exception which will be same affect as the validation.
+            </remarks>
+        </member>
+        <member name="M:System.Index.Equals(System.Object)">
+            <summary>Indicates whether the current Index object is equal to another object of the same type.</summary>
+            <param name="value">An object to compare with this object</param>
+        </member>
+        <member name="M:System.Index.Equals(System.Index)">
+            <summary>Indicates whether the current Index object is equal to another Index object.</summary>
+            <param name="other">An object to compare with this object</param>
+        </member>
+        <member name="M:System.Index.GetHashCode">
+            <summary>Returns the hash code for this instance.</summary>
+        </member>
+        <member name="M:System.Index.op_Implicit(System.Int32)~System.Index">
+            <summary>Converts integer number to an Index.</summary>
+        </member>
+        <member name="M:System.Index.ToString">
+            <summary>Converts the value of the current Index object to its equivalent string representation.</summary>
+        </member>
+        <member name="T:System.Range">
+            <summary>Represent a range has start and end indexes.</summary>
+            <remarks>
+            Range is used by the C# compiler to support the range syntax.
+            <code>
+            int[] someArray = new int[5] { 1, 2, 3, 4, 5 };
+            int[] subArray1 = someArray[0..2]; // { 1, 2 }
+            int[] subArray2 = someArray[1..^0]; // { 2, 3, 4, 5 }
+            </code>
+            </remarks>
+        </member>
+        <member name="P:System.Range.Start">
+            <summary>Represent the inclusive start index of the Range.</summary>
+        </member>
+        <member name="P:System.Range.End">
+            <summary>Represent the exclusive end index of the Range.</summary>
+        </member>
+        <member name="M:System.Range.#ctor(System.Index,System.Index)">
+            <summary>Construct a Range object using the start and end indexes.</summary>
+            <param name="start">Represent the inclusive start index of the range.</param>
+            <param name="end">Represent the exclusive end index of the range.</param>
+        </member>
+        <member name="M:System.Range.Equals(System.Object)">
+            <summary>Indicates whether the current Range object is equal to another object of the same type.</summary>
+            <param name="value">An object to compare with this object</param>
+        </member>
+        <member name="M:System.Range.Equals(System.Range)">
+            <summary>Indicates whether the current Range object is equal to another Range object.</summary>
+            <param name="other">An object to compare with this object</param>
+        </member>
+        <member name="M:System.Range.GetHashCode">
+            <summary>Returns the hash code for this instance.</summary>
+        </member>
+        <member name="M:System.Range.ToString">
+            <summary>Converts the value of the current Range object to its equivalent string representation.</summary>
+        </member>
+        <member name="M:System.Range.StartAt(System.Index)">
+            <summary>Create a Range object starting from start index to the end of the collection.</summary>
+        </member>
+        <member name="M:System.Range.EndAt(System.Index)">
+            <summary>Create a Range object starting from first element in the collection to the end Index.</summary>
+        </member>
+        <member name="P:System.Range.All">
+            <summary>Create a Range object starting from first element to the end.</summary>
+        </member>
+        <member name="M:System.Range.GetOffsetAndLength(System.Int32)">
+            <summary>Calculate the start offset and length of range object using a collection length.</summary>
+            <param name="length">The length of the collection that the range will be used with. length has to be a positive value.</param>
+            <remarks>
+            For performance reason, we don't validate the input length parameter against negative values.
+            It is expected Range will be used with collections which always have non negative length/count.
+            We validate the range is inside the length scope though.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute">
+            <summary>
+            An attribute that allows parameters to receive the expression of other parameters.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute"/> class.
+            </summary>
+            <param name="parameterName">The condition parameter value.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.ParameterName">
+            <summary>
+            Gets the parameter name the expression is retrieved from.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CollectionBuilderAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Initialize the attribute to refer to the <paramref name="methodName"/> method on the <paramref name="builderType"/> type.
+            </summary>
+            <param name="builderType">The type of the builder to use to construct the collection.</param>
+            <param name="methodName">The name of the method on the builder to use to construct the collection.</param>
+            <remarks>
+            <paramref name="methodName"/> must refer to a static method that accepts a single parameter of
+            type <see cref="T:System.ReadOnlySpan`1"/> and returns an instance of the collection being built containing
+            a copy of the data from that span.  In future releases of .NET, additional patterns may be supported.
+            </remarks>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CollectionBuilderAttribute.BuilderType">
+            <summary>
+            Gets the type of the builder to use to construct the collection.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CollectionBuilderAttribute.MethodName">
+            <summary>
+            Gets the name of the method on the builder to use to construct the collection.
+            </summary>
+            <remarks>
+            This should match the metadata name of the target method.
+            For example, this might be ".ctor" if targeting the type's constructor.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute">
+            <summary>
+            Indicates that compiler support for a particular feature is required for the location where this attribute is applied.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute"/> type.
+            </summary>
+            <param name="featureName">The name of the feature to indicate.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName">
+            <summary>
+            The name of the compiler feature.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.IsOptional">
+            <summary>
+            If true, the compiler can choose to allow access to the location where this attribute is applied if it does not understand <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/>.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RefStructs">
+            <summary>
+            The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the ref structs C# feature.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.RequiredMembers">
+            <summary>
+            The <see cref="P:System.Runtime.CompilerServices.CompilerFeatureRequiredAttribute.FeatureName"/> used for the required members C# feature.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute">
+            <summary>
+            Indicates which arguments to a method involving an interpolated string handler should be passed to that handler.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute"/> class.
+            </summary>
+            <param name="argument">The name of the argument that should be passed to the handler.</param>
+            <remarks><see langword="null"/> may be used as the name of the receiver in an instance method.</remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute"/> class.
+            </summary>
+            <param name="arguments">The names of the arguments that should be passed to the handler.</param>
+            <remarks><see langword="null"/> may be used as the name of the receiver in an instance method.</remarks>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.InterpolatedStringHandlerArgumentAttribute.Arguments">
+            <summary>
+            Gets the names of the arguments that should be passed to the handler.
+            </summary>
+            <remarks><see langword="null"/> may be used as the name of the receiver in an instance method.</remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.InterpolatedStringHandlerAttribute">
+            <summary>
+            Indicates the attributed type is to be used as an interpolated string handler.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ModuleInitializerAttribute">
+             <summary>
+             Used to indicate to the compiler that a method should be called
+             in its containing module's initializer.
+             </summary>
+             <remarks>
+             When one or more valid methods
+             with this attribute are found in a compilation, the compiler will
+             emit a module initializer which calls each of the attributed methods.
+            
+             Certain requirements are imposed on any method targeted with this attribute:
+             - The method must be `static`.
+             - The method must be an ordinary member method, as opposed to a property accessor, constructor, local function, etc.
+             - The method must be parameterless.
+             - The method must return `void`.
+             - The method must not be generic or be contained in a generic type.
+             - The method's effective accessibility must be `internal` or `public`.
+            
+             The specification for module initializers in the .NET runtime can be found here:
+             https://github.com/dotnet/runtime/blob/main/docs/design/specs/Ecma-335-Augments.md#module-initializer
+             </remarks>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute">
+            <summary>
+            Specifies the priority of a member in overload resolution. When unspecified, the default priority is 0.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute"/> class.
+            </summary>
+            <param name="priority">The priority of the attributed member. Higher numbers are prioritized, lower numbers are deprioritized. 0 is the default if no attribute is present.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute.Priority">
+            <summary>
+            The priority of the member.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ParamCollectionAttribute">
+            <summary>
+            Indicates that a method will allow a variable number of arguments in its invocation.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.RequiredMemberAttribute">
+            <summary>
+            Specifies that a type has required members or that a member is required.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.RequiresLocationAttribute">
+            <summary>
+            Reserved for use by a compiler for tracking metadata.
+            This attribute should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.SkipLocalsInitAttribute">
+            <summary>
+            Used to indicate to the compiler that the <c>.locals init</c> flag should not be set in method headers.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute"/> class with the specified message.
+            </summary>
+            <param name="message">An optional message associated with this attribute instance.</param>
+        </member>
+        <member name="P:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.Message">
+            <summary>
+            Returns the optional message associated with this attribute instance.
+            </summary>
+        </member>
+        <member name="P:System.Runtime.Versioning.RequiresPreviewFeaturesAttribute.Url">
+            <summary>
+            Returns the optional URL associated with this attribute instance.
+            </summary>
+        </member>
+    </members>
+</doc>
